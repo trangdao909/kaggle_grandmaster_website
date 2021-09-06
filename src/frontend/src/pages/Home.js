@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { PieChart } from 'react-minimal-pie-chart';
 import styled from 'styled-components';
 import {UserTile} from '../components/UserTile';
+import  PaginationCustom  from '../components/PaginationCustom';
 
 const Styles = styled.div`  
      .user-detail  {
@@ -21,7 +22,7 @@ const Styles = styled.div`
     }
 `;
 
-export const Home = () => {
+export const Home =() =>  {
     const [users, setUsers] = useState({});
     //const {userId: id} = useParams();
     
@@ -30,19 +31,20 @@ export const Home = () => {
             const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/user`);
             const data = await response.json();
             setUsers(data);
-            console.log(data);
+           // console.log(data);
 
         }
         fetchUsers();
     }, [])
-    return ( 
-        <Styles>
-            <Container>
-                <Row>                 
-                    {users.map(user => <UserTile key={user.id}   userName={user.displayName} userRank={user.currentRanking}/>)}                 
-                </Row>
-            </Container>
-        </Styles>
-     
-    )
+        
+        return ( 
+            <Styles>
+                <Container>
+                    <Row>      
+                        <PaginationCustom users={users}/>           
+                        {/* {users.map(user => <UserTile key={user.id}   userName={user.displayName} userRank={user.currentRanking}/>)}                  */}
+                    </Row>
+                </Container>
+            </Styles>        
+        )   
 }
