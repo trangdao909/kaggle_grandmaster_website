@@ -15,8 +15,8 @@ body {
   font-family: 'IBM Plex Sans Thai', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
-  color: #e66224;
+  /* background-color: #282c34; */
+  color: #222222;
   max-width: 1100px;
   margin: 0 auto;
 }

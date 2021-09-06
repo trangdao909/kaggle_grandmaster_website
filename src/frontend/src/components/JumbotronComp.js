@@ -11,6 +11,7 @@ const Styles = styled.div`
     height: 200px;
     position: relative;
     z-index: -2;
+   
   }
   .overlay {
     background-color: #000;
