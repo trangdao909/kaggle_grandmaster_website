@@ -67,7 +67,7 @@ export const User = () => {
                             <Col>{user.points}</Col>
                         </Row>   
                         <Row>
-                            <Col>Kaggle Profile</Col>
+                            <Col>Kaggle Profile:</Col>
                             <Col> 
                             <a href={`https://www.kaggle.com${user.userUrl}`}>{user.userUrl}</a> </Col>
                         </Row>       
@@ -94,7 +94,7 @@ export const User = () => {
                         label={(data) => data.dataEntry.value + " " + data.dataEntry.title}
                         labelPosition={80}
                         labelStyle={{
-                            fontSize: "0.20rem",
+                            fontSize: "0.18rem",
                             fontColor: "FFFFFA",
                             fontWeight: "800",
                         }}
