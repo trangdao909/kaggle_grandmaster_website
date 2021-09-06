@@ -1,25 +1,35 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Component } from 'react';
 
-import { TeamPage } from "./pages/TeamPage";
-import { UserPage } from "./pages/UserPage";
-import { HomePage } from "./pages/HomePage";
+import { Home } from './pages/Home';
+import { KaggleOverview } from './pages/KaggleOverview';
+import { User } from './pages/User';
+import { NoMatch } from './pages/NoMatch';
+import { Layout } from './components/Layout';
+import { NavigationBar } from './components/NavigationBar';
+import { Jumbotron } from './components/JumbotronComp';
 
-function App() {
+class App extends Component {
+  render() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/users/:userId">
-            <UserPage />
-          </Route>       
-          {/* <Route path="/">
-            <HomePage />
-          </Route>          */}
-        </Switch>
-      </Router>
-    </div>
+    <React.Fragment>
+        <Router>
+          <NavigationBar />
+          <Jumbotron />
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/overview" component={KaggleOverview} />
+              <Route path="/users/:userId" component={User} />
+              <Route component={NoMatch} />
+            </Switch>
+          </Layout>
+        </Router>
+      </React.Fragment>
+
   );
+  }
 }
 
 export default App;
