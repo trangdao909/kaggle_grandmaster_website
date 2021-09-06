@@ -7,30 +7,26 @@ import styled from 'styled-components';
 
 const Styles = styled.div`  
      .user-detail  {
-        background-color: lightgrey;        
-       
-        padding-top: 6rem;
+        background-color: lightgrey;      
         color: black;
-
-        & > h4 {
+        margin: auto;
+        border-radius: 2rem;
+        & > h6 {
             padding-top: 2rem;
-
         }
-
-    .pie-chart {
-        padding-top: 10rem;
     }
-     
-  }
+  .pie-chart {
+        margin-top: 1rem;
+    }
 `;
 
 export const User = () => {
     const [user, setUser] = useState({});
-    //const {userId: id} = useParams();
+    const {userId: id} = useParams();
     
     useEffect(() =>{
         const fetchUser = async () =>{
-            const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/user/111640`);
+            const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/user/${id}`);
             const data = await response.json();
             setUser(data);
             console.log(data);
@@ -43,9 +39,10 @@ export const User = () => {
             <Container>
                 <Row>
                     <Col md="6" className="user-detail">                
-                        <h4 className="title"><span>Title        :  </span>{user.tier}</h4> 
-                        <h4 className="title"><span>Join Date    :  </span>{user.userJoinDate}</h4>                
-                        <h4 className="title"><span>Total Points :  </span>{user.points}</h4>
+                        <h6 className="title"><span>Title        :  </span>{user.tier}</h6> 
+                        <h6 className="title"><span>Join Date    :  </span>{user.userJoinDate}</h6>                
+                        <h6 className="title"><span>Total Points :  </span>{user.points}</h6>
+                        <h6 className="title"><span> Personal Website :  </span>{user.userUrl}</h6>
                                 
                     </Col>
                     <Col md="6" className="pie-chart">

@@ -13,12 +13,16 @@ const Styles = styled.div`
       color: white;
     }
   }
+  .kaggle{
+    color: #20BEFF;
+    font-weight: bold;
+  }
 `;
 
 export const NavigationBar = () => (
   <Styles>
     <Navbar expand="lg" >
-      <Navbar.Brand href="/">Kaggle Competition Dashboard</Navbar.Brand>
+      <Navbar.Brand href="/"><span className="kaggle">Kaggle </span>Competition Dashboard</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav className="ml-auto">
@@ -29,7 +33,7 @@ export const NavigationBar = () => (
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
-              <Link to="/overview">Kaggle Overview</Link>
+              <Link to="/overview">Overview</Link>
             </Nav.Link>
           </Nav.Item>          
         </Nav>
