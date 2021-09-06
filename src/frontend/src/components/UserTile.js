@@ -7,17 +7,18 @@ import styled from 'styled-components';
 
 const Styles = styled.div`  
     .cart  {
-        background-color: lightgrey;      
-        color: black;
+        background-color: #E5E6EB;      
+        color: #222;        
         margin: 0.5rem auto;
-        border-radius: 1rem;
-        & > h6 {
-            padding-top: 2rem;
-        }
+        border-radius: 1rem;        
+        padding: 1rem 1rem;
+        
     }
    .user-name{
-        color: #20BEFF;
-        
+               
+    }
+    .rank{
+       
     }
 `;
 
@@ -29,13 +30,13 @@ export const UserTile = (props) => {
             <Container>
                 <Row className="cart">
                     <Col md="6" className="user-name">                
-                        <h6 className="title">{props.userName}</h6>
+                        {props.userName}
                     </Col>
-                    <Col md="4" className="">
-                        <h6 className="title">#{props.userRank}</h6>
+                    <Col md="4" className="rank">
+                        #{props.userRank}
                     </Col>
-                    <Col md="2" className="">
-                        <h3 className="title"> ></h3>
+                    <Col md="2" className="">                        
+                        <Link to={`/users/${props.id}`}> More > </Link>
                     </Col>
                 </Row>
             </Container>

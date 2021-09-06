@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 const Styles = styled.div`  
      .user-detail  {
-        background-color: lightgrey;      
+        background-color: #E5E6EB;      
         color: black;
         margin: auto;
         border-radius: 2rem;

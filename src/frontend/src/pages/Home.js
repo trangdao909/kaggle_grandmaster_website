@@ -40,9 +40,8 @@ export const Home =() =>  {
         return ( 
             <Styles>
                 <Container>
-                    <Row>      
-                        <PaginationCustom users={users}/>           
-                        {/* {users.map(user => <UserTile key={user.id}   userName={user.displayName} userRank={user.currentRanking}/>)}                  */}
+                    <Row >      
+                        <PaginationCustom users={users}/>  
                     </Row>
                 </Container>
             </Styles>        
