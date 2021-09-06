@@ -4,19 +4,32 @@ import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { PieChart } from 'react-minimal-pie-chart';
 import styled from 'styled-components';
+import { Jumbotron } from '../components/JumbotronComp';
+import { NavigationBar } from '../components/NavigationBar';
 
 const Styles = styled.div`  
      .user-detail  {
-        background-color: #E5E6EB;      
-        color: black;
+            
+        color: white;
         margin: auto;
         border-radius: 2rem;
-        & > h6 {
+        font-weight: 600;
+        & > div {
             padding-top: 2rem;
         }
     }
-  .pie-chart {
+     .pie-chart {
         margin-top: 1rem;
+        
+    }
+    .backgroundCustom {
+        background-color: #222;
+        position: relative;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
     }
 `;
 
@@ -36,14 +49,29 @@ export const User = () => {
     }, [])
     return (
         <Styles>
-            <Container>
+            <NavigationBar />
+            <Jumbotron title={user.displayName} text={`Ranking: #${user.currentRanking}`} />
+            <Container className="backgroundCustom">
                 <Row>
-                    <Col md="6" className="user-detail">                
-                        <h6 className="title"><span>Title        :  </span>{user.tier}</h6> 
-                        <h6 className="title"><span>Join Date    :  </span>{user.userJoinDate}</h6>                
-                        <h6 className="title"><span>Total Points :  </span>{user.points}</h6>
-                        <h6 className="title"><span> Personal Website :  </span>{user.userUrl}</h6>
-                                
+                    <Col md="6" className="user-detail">    
+                        <Row>
+                            <Col>Title:</Col>
+                            <Col>{user.tier}</Col>
+                        </Row>  
+                        <Row>
+                            <Col>Join Date:</Col>
+                            <Col>{user.userJoinDate}</Col>
+                        </Row>  
+                        <Row>
+                            <Col>Total Points:</Col>
+                            <Col>{user.points}</Col>
+                        </Row>   
+                        <Row>
+                            <Col>Kaggle Profile</Col>
+                            <Col> 
+                            <a href={`https://www.kaggle.com${user.userUrl}`}>{user.userUrl}</a> </Col>
+                        </Row>       
+                       
                     </Col>
                     <Col md="6" className="pie-chart">
                         <PieChart
@@ -57,28 +85,21 @@ export const User = () => {
                             { title: 'Bronze Medals', value:  user.totalBronzeMedals, color: '#57472C' },
                         ]}
                         lengthAngle={360}
-                        lineWidth={15}
+                        lineWidth={45}
                         paddingAngle={0}
                         radius={50}
                         rounded
                         startAngle={0}
                         viewBoxSize={[100, 100]}
                         label={(data) => data.dataEntry.value + " " + data.dataEntry.title}
-                        labelPosition={65}
+                        labelPosition={80}
                         labelStyle={{
-                            fontSize: "0.25rem",
+                            fontSize: "0.20rem",
                             fontColor: "FFFFFA",
                             fontWeight: "800",
                         }}
                         />
-                    {/* <PieChart
-                        label={(props) => {  return props.dataEntry.value ;  }}
-                        data={[            
-                            { title: 'Gold Medals', value: user.totalGoldMedals, color: '#f2d675' },
-                            { title: 'Silver Medals', value:  user.totalSilverMedals, color: '#C4C4C4' },
-                            { title: 'Bronze Medals', value:  user.totalBronzeMedals, color: '#57472C' },
-                        ]}
-                        /> */}
+                  
                     </Col>
                 </Row>
             </Container>

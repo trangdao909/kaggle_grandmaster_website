@@ -21,8 +21,10 @@ const Styles = styled.div`
 
 export const NavigationBar = () => (
   <Styles>
-    <Navbar expand="lg" >
-      <Navbar.Brand href="/"><span className="kaggle">Kaggle </span>Competition Dashboard</Navbar.Brand>
+    <Navbar  >
+      <Navbar.Brand href="https://www.kaggle.com/">
+        <span className="kaggle">Kaggle </span>Competition Dashboard
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav className="ml-auto">

@@ -28,16 +28,22 @@ export const UserTile = (props) => {
     return (
         <Styles>
             <Container>
-                <Row className="cart">
-                    <Col md="6" className="user-name">                
-                        {props.userName}
+                <Row >
+                    <Col md="1" > </Col>
+                    <Col md="10" className="justify-content-md-center">                
+                        <Row className="cart ">
+                            <Col md="6" className="user-name">                
+                            {props.userName}
+                            </Col>
+                            <Col md="4" className="rank">
+                                #{props.userRank}
+                            </Col>
+                            <Col md="2" className="">                        
+                                <Link to={`/users/${props.id}`}> More > </Link>
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col md="4" className="rank">
-                        #{props.userRank}
-                    </Col>
-                    <Col md="2" className="">                        
-                        <Link to={`/users/${props.id}`}> More > </Link>
-                    </Col>
+                    
                 </Row>
             </Container>
         </Styles>

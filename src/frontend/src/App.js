@@ -8,15 +8,14 @@ import { User } from './pages/User';
 import { NoMatch } from './pages/NoMatch';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/NavigationBar';
-import { Jumbotron } from './components/JumbotronComp';
 
 class App extends Component {
   render() {
   return (
     <React.Fragment>
         <Router>
-          <NavigationBar />
-          <Jumbotron />
+          {/* <NavigationBar /> */}
+          
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />

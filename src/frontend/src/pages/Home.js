@@ -6,20 +6,20 @@ import { PieChart } from 'react-minimal-pie-chart';
 import styled from 'styled-components';
 import {UserTile} from '../components/UserTile';
 import  PaginationCustom  from '../components/PaginationCustom';
+import { Jumbotron } from '../components/JumbotronComp';
+import { NavigationBar } from '../components/NavigationBar';
 
 const Styles = styled.div`  
-     .user-detail  {
-        background-color: lightgrey;      
-        color: black;
-        margin: auto;
-        border-radius: 2rem;
-        & > h6 {
-            padding-top: 2rem;
-        }
+    .backgroundCustom {
+        background-color: #222;    
+        position: relative;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 5;
     }
-  .pie-chart {
-        margin-top: 1rem;
-    }
+    
 `;
 
 export const Home =() =>  {
@@ -39,11 +39,14 @@ export const Home =() =>  {
         
         return ( 
             <Styles>
-                <Container>
-                    <Row >      
-                        <PaginationCustom users={users}/>  
+                <NavigationBar />
+                <Jumbotron title="Welcome" text="List of Kagglers and ranking" />                
+                <Container className="backgroundCustom">
+                    <Row >  
+                            <PaginationCustom users={users}/> 
                     </Row>
                 </Container>
+                
             </Styles>        
         )   
 }

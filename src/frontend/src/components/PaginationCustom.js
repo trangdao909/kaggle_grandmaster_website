@@ -3,6 +3,12 @@ import JwPagination from 'jw-react-pagination';
 import {useEffect, useState} from 'react';
 import {UserTile} from '../components/UserTile';
 
+const customStyles = {
+    ul: {        
+        marginLeft: '15rem',
+        
+    }
+};
 
 
 class PaginationCustom extends React.Component {
@@ -34,8 +40,11 @@ class PaginationCustom extends React.Component {
             <React.Fragment>
                 {this.state.pageOfItems.map(user =>
                     <UserTile key={user.id} id = {user.id}  userName={user.displayName} userRank={user.currentRanking} />
-                )}
-                <JwPagination items={this.props.users} onChangePage={this.onChangePage}/>
+                )}               
+                <JwPagination items={this.props.users} onChangePage={this.onChangePage} styles={customStyles}  />
+                
+
+               
             </ React.Fragment>
         );
     }

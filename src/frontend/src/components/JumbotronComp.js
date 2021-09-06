@@ -15,7 +15,7 @@ const Styles = styled.div`
   }
   .overlay {
     background-color: #000;
-    opacity: 0.6;
+    opacity: 0.3;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,13 +28,13 @@ const Styles = styled.div`
   }
 `;
 
-export const Jumbotron = () => (
+export const Jumbotron = (props) => (
   <Styles>
     <Jumbo fluid className="jumbo">
       <div className="overlay"></div>
       <Container className="jumbo-text">
-        <h1>Welcome</h1>
-        <p>List of Kagglers</p>
+        <h1>{props.title}</h1>
+        <p>{props.text}</p>
       </Container>
     </Jumbo>
   </Styles>
