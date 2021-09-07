@@ -1,8 +1,6 @@
 import React from 'react';
-import {useEffect, useState} from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { PieChart } from 'react-minimal-pie-chart';
 import styled from 'styled-components';
 
 const Styles = styled.div`  
@@ -11,19 +9,12 @@ const Styles = styled.div`
         color: #222;        
         margin: 0.5rem auto;
         border-radius: 1rem;        
-        padding: 1rem 1rem;
-        
+        padding: 1rem 1rem;        
     }
-   .user-name{
-               
-    }
-    .rank{
-       
-    }
+   
 `;
 
-export const UserTile = (props) => {
-   
+export const UserTile = (props) => {   
    
     return (
         <Styles>
@@ -42,8 +33,7 @@ export const UserTile = (props) => {
                                 <Link to={`/users/${props.id}`}> More > </Link>
                             </Col>
                         </Row>
-                    </Col>
-                    
+                    </Col>                    
                 </Row>
             </Container>
         </Styles>

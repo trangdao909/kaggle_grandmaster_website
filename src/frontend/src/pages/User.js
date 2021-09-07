@@ -1,6 +1,6 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { PieChart } from 'react-minimal-pie-chart';
 import styled from 'styled-components';
@@ -8,8 +8,7 @@ import { Jumbotron } from '../components/JumbotronComp';
 import { NavigationBar } from '../components/NavigationBar';
 
 const Styles = styled.div`  
-     .user-detail  {
-            
+     .user-detail  {            
         color: white;
         margin: auto;
         border-radius: 2rem;
@@ -25,10 +24,7 @@ const Styles = styled.div`
     .backgroundCustom {
         background-color: #222;
         position: relative;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        margin:0 ;
         z-index: 5;
     }
 `;
@@ -46,7 +42,7 @@ export const User = () => {
 
         }
         fetchUser();
-    }, [])
+    }, [id])
     return (
         <Styles>
             <NavigationBar />

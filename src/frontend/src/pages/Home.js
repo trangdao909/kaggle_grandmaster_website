@@ -1,10 +1,7 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
-import { PieChart } from 'react-minimal-pie-chart';
+import { Container, Row} from 'react-bootstrap';
 import styled from 'styled-components';
-import {UserTile} from '../components/UserTile';
 import  PaginationCustom  from '../components/PaginationCustom';
 import { Jumbotron } from '../components/JumbotronComp';
 import { NavigationBar } from '../components/NavigationBar';
@@ -13,10 +10,7 @@ const Styles = styled.div`
     .backgroundCustom {
         background-color: #222;    
         position: relative;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        margin:0 ;
         z-index: 5;
     }
     
@@ -31,8 +25,6 @@ export const Home =() =>  {
             const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/user`);
             const data = await response.json();
             setUsers(data);
-           // console.log(data);
-
         }
         fetchUsers();
     }, [])

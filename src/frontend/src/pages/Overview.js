@@ -1,9 +1,5 @@
-//npm install --legacy-peer-deps jw-react-pagination
 import React from 'react';
-import {useEffect, useState} from 'react';
-import { Link, useParams } from 'react-router-dom';
 import { Container, Row, Col, Card, ListGroupItem, ListGroup } from 'react-bootstrap';
-import { PieChart } from 'react-minimal-pie-chart';
 import styled from 'styled-components';
 import { Jumbotron } from '../components/JumbotronComp';
 import { NavigationBar } from '../components/NavigationBar';
@@ -14,10 +10,7 @@ const Styles = styled.div`
     .backgroundCustom {
         background-color: #222;
         position: relative;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
+        margin:0 ;
         z-index: 5;
         padding: 5rem;
     }
@@ -62,7 +55,7 @@ export const Overview = () => {
                                     <ListGroupItem>Spring Boot</ListGroupItem>
                                     <ListGroupItem>Spring JPA</ListGroupItem>
                                     <ListGroupItem>Spring Hsql for in-memory sql</ListGroupItem>
-                                    <ListGroupItem>Spring Batch read .csv file from Kaggle.com </ListGroupItem>
+                                    <ListGroupItem>Spring Batch reads .csv file from Kaggle.com </ListGroupItem>
                                     <ListGroupItem>Spring MVC</ListGroupItem>
                                 </ListGroup>
                             </Card.Body>
